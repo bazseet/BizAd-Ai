@@ -1,0 +1,1310 @@
+/* =========================================================
+   BIZAD AI — CREATE AD PAGE
+   ========================================================= */
+
+.create-page {
+  min-height: 100vh;
+  background: #f8f9fc;
+  color: #11121a;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.create-nav {
+  height: 76px;
+  padding: 0 5%;
+  border-bottom: 1px solid #e5e5eb;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(12px);
+}
+
+.back-button {
+  border: none;
+  background: transparent;
+  color: #666773;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  color: #11121a;
+}
+
+.create-logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #11121a;
+}
+
+.create-logo strong {
+  font-weight: 700;
+}
+
+.step-indicator {
+  font-size: 13px;
+  color: #888994;
+}
+
+/* =========================================================
+   FORM PAGE
+   ========================================================= */
+
+.form-container {
+  width: min(900px, calc(100% - 40px));
+  margin: 70px auto 100px;
+}
+
+.form-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 55px;
+}
+
+.form-badge,
+.success-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.form-badge {
+  padding: 7px 13px;
+  background: #eeeaff;
+  color: #624fe4;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  margin-bottom: 18px;
+}
+
+.form-heading h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin: 0 0 15px;
+}
+
+.form-heading p {
+  color: #777885;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* =========================================================
+   FORM SECTIONS
+   ========================================================= */
+
+.form-section {
+  background: white;
+  border: 1px solid #e3e3e9;
+  border-radius: 16px;
+  padding: 35px;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  margin-bottom: 18px;
+  transition: 0.2s;
+}
+
+.form-section:hover {
+  border-color: #d7d5e3;
+}
+
+.section-number {
+  color: #705bea;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.section-content h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  margin: 0 0 6px;
+  color: #11121a;
+}
+
+.section-content > p {
+  color: #858692;
+  font-size: 13px;
+  margin: 0 0 25px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field.full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #393a44;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid #dfe0e7;
+  border-radius: 9px;
+  padding: 13px 14px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #11121a;
+  outline: none;
+  transition: 0.2s;
+  background: white;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #aaaab4;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #7561ed;
+  box-shadow: 0 0 0 3px rgba(117, 97, 237, 0.08);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* =========================================================
+   AD TYPE SELECTOR
+   ========================================================= */
+
+.ad-type-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.ad-type {
+  text-align: left;
+  border: 1px solid #e0e0e7;
+  background: white;
+  border-radius: 10px;
+  padding: 17px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: 0.2s;
+}
+
+.ad-type:hover {
+  border-color: #9a8df1;
+  transform: translateY(-1px);
+}
+
+.ad-type.selected {
+  border-color: #6b55e8;
+  background: #f6f4ff;
+  box-shadow: 0 0 0 2px rgba(107, 85, 232, 0.1);
+}
+
+.ad-type span {
+  font-size: 23px;
+}
+
+.ad-type strong {
+  font-size: 13px;
+  color: #11121a;
+}
+
+.ad-type small {
+  color: #8a8b96;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.error-message {
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: #fff1f1;
+  color: #c62828;
+  border: 1px solid #ffcaca;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FORM SUBMIT
+   ========================================================= */
+
+.form-submit {
+  background: #11121a;
+  border-radius: 16px;
+  padding: 25px 30px;
+  margin-top: 25px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-submit div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-submit strong {
+  font-size: 14px;
+}
+
+.form-submit span {
+  color: #999aa6;
+  font-size: 12px;
+}
+
+.generate-button {
+  border: none;
+  background: white;
+  color: #11121a;
+  border-radius: 9px;
+  padding: 14px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.generate-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #f2f2f4;
+}
+
+.generate-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* =========================================================
+   RESULTS PAGE
+   ========================================================= */
+
+.result-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 70px auto 100px;
+  text-align: center;
+}
+
+.success-badge {
+  background: #eafaf0;
+  color: #20834a;
+  padding: 8px 15px;
+  font-size: 12px;
+}
+
+.result-container h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin: 18px 0 10px;
+  color: #11121a;
+}
+
+.result-subtitle {
+  color: #777885;
+  margin-bottom: 45px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.result-subtitle strong {
+  color: #33343d;
+}
+
+/* =========================================================
+   RESULT GRID
+   ========================================================= */
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  text-align: left;
+  align-items: start;
+}
+
+.result-card {
+  background: white;
+  border: 1px solid #e1e1e8;
+  border-radius: 16px;
+  padding: 25px;
+  min-width: 0;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.result-card:hover {
+  border-color: #d7d5e3;
+  box-shadow: 0 12px 35px rgba(40, 35, 80, 0.06);
+}
+
+.result-icon {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.result-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 19px;
+  margin: 0 0 7px;
+  color: #11121a;
+}
+
+.result-card > p {
+  color: #858692;
+  font-size: 12px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CAMPAIGN OUTPUT
+   ========================================================= */
+
+.copy-result {
+  display: flex;
+  flex-direction: column;
+}
+
+.campaign-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.campaign-section {
+  border: 1px solid #ececf1;
+  border-radius: 11px;
+  background: #fafafd;
+  padding: 15px;
+}
+
+.campaign-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.campaign-section-title {
+  color: #624fe4;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.copy-section-button {
+  border: 1px solid #dddde5;
+  background: white;
+  color: #555662;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.copy-section-button:hover {
+  background: #f2f1f7;
+  color: #624fe4;
+}
+
+.campaign-section-content {
+  color: #454650;
+  font-size: 13px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.campaign-output {
+  height: 310px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #555662;
+  background: #f8f8fb;
+  border-radius: 10px;
+  padding: 17px;
+}
+
+.campaign-output pre {
+  margin: 0;
+  font-family: inherit;
+  white-space: pre-wrap;
+}
+
+/* =========================================================
+   COPY BUTTON
+   ========================================================= */
+
+.result-button {
+  width: 100%;
+  border: 1px solid #dddde5;
+  background: white;
+  color: #24252e;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.result-button:hover:not(:disabled) {
+  background: #f6f5fa;
+  border-color: #cfcdd9;
+}
+
+.result-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+.video-result {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.video-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.generated-video {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  max-height: 500px;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  display: block;
+  border-radius: 14px;
+  background: #111;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.video-download {
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   VIDEO PLACEHOLDER
+   ========================================================= */
+
+.video-placeholder {
+  min-height: 280px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    #16141e,
+    #51418b
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-placeholder::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-placeholder::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.video-placeholder span {
+  width: 60px;
+  height: 60px;
+  background: white;
+  color: #5b4bff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.video-placeholder small {
+  position: absolute;
+  bottom: 14px;
+  left: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 9px;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+/* =========================================================
+   VIDEO GENERATING STATE
+   ========================================================= */
+
+.video-generating {
+  min-height: 280px;
+  border-radius: 14px;
+  background: #17151f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+}
+
+.video-spinner {
+  width: 42px;
+  height: 42px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: bizad-spin 0.9s linear infinite;
+  margin-bottom: 18px;
+}
+
+.video-generating strong {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.video-generating p {
+  color: #a7a5b0;
+  font-size: 11px;
+  margin-bottom: 18px;
+}
+
+.video-progress {
+  width: 100%;
+  max-width: 220px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.video-progress-bar {
+  height: 100%;
+  background: #806cff;
+  border-radius: inherit;
+  transition: width 0.5s ease;
+}
+
+.video-progress-text {
+  margin-top: 8px;
+  color: #aaa7b5;
+  font-size: 10px;
+}
+
+@keyframes bizad-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   FLYER
+   ========================================================= */
+
+.flyer-image-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.flyer-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.flyer-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 14px;
+}
+
+.flyer-placeholder {
+  min-height: 280px;
+  border-radius: 14px;
+  background: linear-gradient(
+    150deg,
+    #edeaff,
+    #f8e9ff
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.flyer-placeholder::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(98, 79, 228, 0.1);
+  border-radius: 50%;
+}
+
+.flyer-placeholder strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 23px;
+  position: relative;
+  z-index: 1;
+}
+
+.flyer-placeholder span {
+  color: #664de0;
+  font-weight: 700;
+  font-size: 13px;
+  position: relative;
+  z-index: 1;
+}
+
+.flyer-placeholder small {
+  color: #9a99a5;
+  font-size: 8px;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   FLYER GENERATING STATE
+   ========================================================= */
+
+.flyer-generating {
+  min-height: 280px;
+  border-radius: 14px;
+  background: linear-gradient(
+    150deg,
+    #edeaff,
+    #f8e9ff
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+}
+
+.flyer-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(98, 79, 228, 0.15);
+  border-top-color: #624fe4;
+  border-radius: 50%;
+  animation: bizad-spin 0.9s linear infinite;
+  margin-bottom: 17px;
+}
+
+.flyer-generating strong {
+  font-size: 14px;
+  color: #33313d;
+}
+
+.flyer-generating p {
+  margin-top: 6px;
+  color: #898793;
+  font-size: 11px;
+}
+
+/* =========================================================
+   ERROR STATES
+   ========================================================= */
+
+.result-card .error-message {
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.generation-error {
+  padding: 18px;
+  border-radius: 12px;
+  background: #fff7f7;
+  border: 1px solid #ffdede;
+  color: #b52b2b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CREATE ANOTHER
+   ========================================================= */
+
+.create-another {
+  border: none;
+  background: transparent;
+  color: #6651dc;
+  font-weight: 600;
+  margin-top: 35px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.create-another:hover {
+  color: #4936c2;
+  transform: translateX(-2px);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .result-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .copy-result {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+  .create-nav {
+    height: 68px;
+    padding: 0 20px;
+  }
+
+  .create-logo {
+    font-size: 18px;
+  }
+
+  .form-container {
+    width: min(100% - 30px, 900px);
+    margin-top: 50px;
+  }
+
+  .form-heading {
+    margin-bottom: 40px;
+  }
+
+  .form-heading h1,
+  .result-container h1 {
+    font-size: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .form-heading p {
+    font-size: 14px;
+  }
+
+  .form-section {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 25px 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field.full {
+    grid-column: auto;
+  }
+
+  .ad-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-submit {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 22px;
+  }
+
+  .generate-button {
+    width: 100%;
+  }
+
+  .step-indicator {
+    display: none;
+  }
+
+  /* Results */
+
+  .result-container {
+    width: min(100% - 30px, 1180px);
+    margin-top: 50px;
+  }
+
+  .result-subtitle {
+    font-size: 13px;
+    margin-bottom: 35px;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .copy-result {
+    grid-column: auto;
+  }
+
+  .result-card {
+    padding: 20px;
+  }
+
+  .video-placeholder,
+  .flyer-placeholder,
+  .video-generating,
+  .flyer-generating {
+    min-height: 260px;
+  }
+
+  .generated-video {
+    max-width: 260px;
+    max-height: 460px;
+  }
+
+  .video-download {
+    max-width: 260px;
+  }
+
+  .campaign-output {
+    height: 280px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .form-heading h1,
+  .result-container h1 {
+    font-size: 32px;
+  }
+
+  .create-logo {
+    font-size: 16px;
+  }
+
+  .form-section {
+    padding: 22px 16px;
+  }
+
+  .result-card {
+    padding: 17px;
+  }
+
+  .form-submit {
+    border-radius: 13px;
+  }
+
+  .video-placeholder,
+  .flyer-placeholder,
+  .video-generating,
+  .flyer-generating {
+    min-height: 230px;
+  }
+}
+/* =========================================================
+   MOBILE POLISH — FINAL
+   ========================================================= */
+
+.create-page {
+  overflow-x: hidden;
+}
+
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 750px) {
+  .create-nav {
+    height: 64px;
+    padding: 0 15px;
+  }
+
+  .back-button {
+    font-size: 13px;
+    padding: 10px 4px;
+  }
+
+  .create-logo {
+    font-size: 17px;
+  }
+
+  .form-container {
+    width: calc(100% - 24px);
+    margin-top: 42px;
+    margin-bottom: 70px;
+  }
+
+  .form-heading {
+    padding: 0 6px;
+    margin-bottom: 32px;
+  }
+
+  .form-heading h1,
+  .result-container h1 {
+    font-size: clamp(32px, 9vw, 40px);
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+    overflow-wrap: anywhere;
+  }
+
+  .form-heading p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .form-section {
+    gap: 12px;
+    padding: 22px 17px;
+    border-radius: 14px;
+    margin-bottom: 13px;
+  }
+
+  .section-number {
+    font-size: 12px;
+  }
+
+  .section-content h2 {
+    font-size: 20px;
+  }
+
+  .section-content > p {
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .form-grid {
+    gap: 15px;
+  }
+
+  .form-field {
+    gap: 7px;
+  }
+
+  .form-field label {
+    font-size: 12px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-size: 16px;
+    padding: 13px 12px;
+    border-radius: 9px;
+  }
+
+  .form-field textarea {
+    min-height: 115px;
+  }
+
+  .ad-type-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .ad-type {
+    min-height: 125px;
+    padding: 14px;
+  }
+
+  .ad-type span {
+    font-size: 21px;
+  }
+
+  .ad-type strong {
+    font-size: 12px;
+  }
+
+  .ad-type small {
+    font-size: 10px;
+  }
+
+  .error-message {
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+
+  .form-submit {
+    padding: 20px 17px;
+    margin-top: 18px;
+    border-radius: 14px;
+    gap: 16px;
+  }
+
+  .form-submit strong {
+    font-size: 13px;
+  }
+
+  .form-submit span {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .generate-button {
+    min-height: 50px;
+    padding: 13px 18px;
+    border-radius: 9px;
+  }
+
+  .result-container {
+    width: calc(100% - 24px);
+    margin-top: 42px;
+    margin-bottom: 70px;
+  }
+
+  .success-badge {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  .result-container h1 {
+    margin-top: 15px;
+  }
+
+  .result-subtitle {
+    margin-bottom: 28px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .result-grid {
+    gap: 13px;
+  }
+
+  .result-card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .result-icon {
+    font-size: 25px;
+    margin-bottom: 14px;
+  }
+
+  .result-card h3 {
+    font-size: 18px;
+  }
+
+  .result-card > p {
+    margin-bottom: 17px;
+  }
+
+  .campaign-section {
+    padding: 13px;
+  }
+
+  .campaign-section-content {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .copy-section-button {
+    min-height: 30px;
+    padding: 5px 8px;
+  }
+
+  .campaign-output {
+    height: 270px;
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  .result-button {
+    min-height: 46px;
+    margin-top: 15px;
+  }
+
+  .video-placeholder,
+  .flyer-placeholder,
+  .video-generating,
+  .flyer-generating {
+    min-height: 250px;
+  }
+
+  .generated-video,
+  .video-download {
+    max-width: 100%;
+  }
+
+  .generated-video {
+    max-height: min(460px, 70vh);
+  }
+
+  .video-download {
+    min-height: 46px;
+  }
+
+  .flyer-image-container {
+    margin-top: 16px;
+  }
+
+  .flyer-download {
+    min-height: 46px;
+  }
+
+  .create-another {
+    margin-top: 28px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .create-nav {
+    padding: 0 11px;
+  }
+
+  .back-button {
+    font-size: 12px;
+  }
+
+  .create-logo {
+    font-size: 16px;
+  }
+
+  .form-container,
+  .result-container {
+    width: calc(100% - 20px);
+    margin-top: 35px;
+  }
+
+  .form-heading {
+    margin-bottom: 27px;
+  }
+
+  .form-heading h1,
+  .result-container h1 {
+    font-size: 31px;
+    letter-spacing: -1.2px;
+  }
+
+  .form-heading p {
+    font-size: 13px;
+  }
+
+  .form-section {
+    padding: 20px 14px;
+  }
+
+  .section-content h2 {
+    font-size: 19px;
+  }
+
+  .ad-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-type {
+    min-height: 0;
+  }
+
+  .form-submit {
+    padding: 18px 14px;
+  }
+
+  .result-card {
+    padding: 15px;
+  }
+
+  .campaign-section-header {
+    align-items: flex-start;
+  }
+
+  .campaign-section-content {
+    font-size: 11.5px;
+  }
+
+  .video-placeholder,
+  .flyer-placeholder,
+  .video-generating,
+  .flyer-generating {
+    min-height: 225px;
+  }
+}
